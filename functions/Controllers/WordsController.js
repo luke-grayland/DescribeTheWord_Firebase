@@ -7,10 +7,10 @@ module.exports.GetWordsByCategory = async (req, res) => {
     const allWords = await db.collection("Words").get()
 
     const words = category === 'random'
-        ? allWords.docs.map(doc => doc.data().Word)
+        ? allWords.docs.map(doc => doc.data().Words).reduce((acc, val) => acc.concat(val), [])
         : allWords.docs
         .filter(doc => doc.data().Category.toLowerCase() === category)
-        .map(doc => doc.data().Word)
+            .map(doc => doc.data().Words).flat()
 
     const response = words.length > 0
         ? JsonResponse(words, true, 'Success', 200)
