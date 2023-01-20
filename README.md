@@ -4,4 +4,4 @@ Describe The Word is an Articulate-style, quick, multiplayer party game for two 
 
 This project is a RESTful API written in Node.js using the Express framework; it serves the React Native front-end with Category and Word data. 
 
-The project was built with - and is hosted in - Firebase; it connects to a Firestore (NoSQL) database.
+The project was built with - and is hosted in - Firebase; it connects to a Firestore (NoSQL) database. Requests can only be made via the Describe The Word app, which utilises JWT tokens to enforce authentication.
